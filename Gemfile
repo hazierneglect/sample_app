@@ -4,6 +4,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'therubyracer'
 gem 'bootstrap-sass'
+gem 'bcrypt-ruby', '3.0.0'
 
 group :development, :test do
   gem 'rspec-rails'
