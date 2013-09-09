@@ -27,7 +27,7 @@ describe "AuthenticationPages" do
     
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
-      before do
+      before  do
 	
         fill_in "Email",    with: user.email.upcase
         fill_in "Password", with: user.password
@@ -42,8 +42,8 @@ describe "AuthenticationPages" do
       
 
       describe "after saving the user" do
-        #before { click_button submit }
-        #let(:user) { User.find_by(email: 'user@example.com') }
+        before { click_button submit }
+        let(:user) { User.find_by(email: 'user@example.com') }
 	
         it { should have_link('Sign out') }
         it { should have_title(user.name) }
@@ -55,5 +55,4 @@ describe "AuthenticationPages" do
       end
     end
   end
-  
 end
