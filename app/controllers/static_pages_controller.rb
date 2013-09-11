@@ -9,12 +9,14 @@ class StaticPagesController < ApplicationController
     # Show all items, not just ones own.
     
     if params[:utf8] == '✓'
-      search= "\s*" + params[:q]
+      search=  params[:q]
       #render search.to_s
       # =~ /Cats(.*)/
       #@feed_items = Micropost.where("title = ?", search)
       
-      @feed_items = Micropost.where("title  ?", 'REGEXP \[a-zA-Z0-9_]*Regexp.escape(search)\[a-zA-Z0-9_]*' )
+      @feed_items = Micropost.find(:all, :conditions => ['title LIKE ?', '%'+search+='%'])#.paginate(page: params[:page])#.collect(&:title)
+      require 'will_paginate/array'
+      @feed_items = @feed_items.paginate(page: params[:page])
       #@feed_items = Micropost.where(CharIndex(search,"title"))
     else
       @feed_items = Micropost.all.paginate(page: params[:page])
