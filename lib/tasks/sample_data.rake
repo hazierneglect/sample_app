@@ -24,6 +24,7 @@ namespace :db do
       content = Faker::Lorem.sentence(5)
       users.each { |user| user.microposts.create!(content: content, title: title) }
     end
+<<<<<<< HEAD
 =end
   end
 end
