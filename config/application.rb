@@ -13,7 +13,6 @@ Bundler.require(:default, Rails.env)
 
 
 module SampleApp
-  config.assets.initialize_on_precompile = false
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -27,8 +26,8 @@ module SampleApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
    
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    #config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     
-    
+    #config.assets.initialize_on_precompile = false
   end
 end
