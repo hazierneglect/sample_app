@@ -7,7 +7,7 @@ namespace :db do
                          password: "foobar",
                          password_confirmation: "foobar",
                          admin: true)
-
+=begin
     99.times do |n|
       name  = Faker::Name.name
       email = "example-#{n+1}@railstutorial.org"
@@ -24,7 +24,7 @@ namespace :db do
       content = Faker::Lorem.sentence(5)
       users.each { |user| user.microposts.create!(content: content, title: title) }
     end
-    
+=end   
   end
 end
  
