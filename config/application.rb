@@ -10,6 +10,8 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
+
+
 module SampleApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -26,6 +28,6 @@ module SampleApp
    
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     
-    config.assets.initialize_on_precompile = false
+    #config.assets.initialize_on_precompile = false
   end
 end
