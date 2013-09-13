@@ -2,15 +2,34 @@
 <li id="<%= feed_item.id %>">
   <%#= link_to gravatar_for(feed_item.user), feed_item.user %>
   <br>
-  <span class="title"><%= feed_item.title %></span> (sold by <%= link_to feed_item.user.name, feed_item.user %>)
-  <span class="content"><%= feed_item.content %></span>
-  <span class ="content"><a href="mailto: <%= feed_item.user.email %>">Contact owner</a></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
-  </span>
+<table border="0" style="table-layout: fixed;">
+<tr>
+  <td class="title" style="padding:0 30px 0 0;"><%= feed_item.title %></td>
+  <td style="padding:0 15px 0 0;">going for</td>
+  <td class="title"><%= feed_item.price %></td>
+</tr>
+</table>
+<table border="0" style="table-layout: fixed;">
+<tr>
+  <td style="word-wrap:break-word;"><%= feed_item.content %></td>
+  
+</tr>
+
+</table>
+<table border="0" style="table-layout: fixed;">
+<tr>
+  <td style="padding:0 15px 0 0;">Contact: <%= feed_item.contact %></td>
+  <td style="padding:0 15px 0 0;">Sold by <%= link_to feed_item.user.name, feed_item.user %></td>
+</tr>
+
   <% if current_user?(feed_item.user) %>
+  <tr><td>
     <%= link_to "delete", feed_item, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: feed_item.content %>
+  </td></tr>
   <% end %>
+
+</table>
+  
 </li> 

@@ -4,7 +4,9 @@
   <div class="field">
   <h1>Sell a book:</h1>
     <%= f.text_area :title, placeholder: "Tags: Subject, Class name, Professor, etc" %>
-    <%= f.text_area :content, placeholder: "Description, price, contact info, etc.." %>
+    <%= f.text_area :content, placeholder: "Description (optional)" %>
+    <%= f.text_field :price, placeholder: "Asking price" %>
+    <%= f.text_field :contact, placeholder: "Phone number or contact info" %>
   </div>
   <%= f.submit "Sell!", class: "btn btn-large btn-primary" %>
 <% end %> 
